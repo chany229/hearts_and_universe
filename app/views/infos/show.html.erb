@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @info.event_id %>
+</p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @info.keyword_id %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @info.desc %>
+</p>
+
+<%= link_to 'Edit', edit_info_path(@info) %> |
+<%= link_to 'Back', infos_path %>

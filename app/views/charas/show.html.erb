@@ -1,0 +1,116 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @chara.name %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @chara.animal %>
+</p>
+
+<p>
+  <strong>Ability:</strong>
+  <%= @chara.ability %>
+</p>
+
+<p>
+  <strong>Ability b:</strong>
+  <%= @chara.ability_b %>
+</p>
+
+<p>
+  <strong>Group before:</strong>
+  <%= @chara.group_before %>
+</p>
+
+<p>
+  <strong>Group now:</strong>
+  <%= @chara.group_now %>
+</p>
+
+<p>
+  <strong>Group after:</strong>
+  <%= @chara.group_after %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @chara.target %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @chara.theme %>
+</p>
+
+<p>
+  <strong>Color1:</strong>
+  <%= @chara.color1 %>
+</p>
+
+<p>
+  <strong>Color2:</strong>
+  <%= @chara.color2 %>
+</p>
+
+<p>
+  <strong>Color3:</strong>
+  <%= @chara.color3 %>
+</p>
+
+<p>
+  <strong>Shape:</strong>
+  <%= @chara.shape %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @chara.sex %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @chara.age %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @chara.height %>
+</p>
+
+<p>
+  <strong>Skin1:</strong>
+  <%= @chara.skin1 %>
+</p>
+
+<p>
+  <strong>Skin2:</strong>
+  <%= @chara.skin2 %>
+</p>
+
+<p>
+  <strong>Eye color:</strong>
+  <%= @chara.eye_color %>
+</p>
+
+<p>
+  <strong>Hair color:</strong>
+  <%= @chara.hair_color %>
+</p>
+
+<p>
+  <strong>Weapon:</strong>
+  <%= @chara.weapon %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @chara.desc %>
+</p>
+
+<%= render partial: 'events/list', locals: { events: @chara.events.default_order}  %>
+
+<%= link_to 'Edit', edit_chara_path(@chara) %> |
+<%= link_to 'Back', charas_path %>

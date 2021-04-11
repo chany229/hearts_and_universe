@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @keyword.name %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @keyword.desc %>
+</p>
+
+<%= render partial: 'events/list', locals: { events: @keyword.events.default_order}  %>
+
+<%= link_to 'Edit', edit_keyword_path(@keyword) %> |
+<%= link_to 'Back', keywords_path %>

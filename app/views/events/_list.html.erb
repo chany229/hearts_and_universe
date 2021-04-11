@@ -1,0 +1,38 @@
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+  <tr>
+    <th>Chapter</th>
+    <th>Position</th>
+    <th>Title</th>
+    <th>Charas</th>
+    <th>Keywords</th>
+    <th>Body</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody data-behavior='sortable'>
+  <% events.each do |event| %>
+    <tr>
+      <td><%= event.chapter.try(:title) %></td>
+      <td><%= event.position %></td>
+      <td><%= event.title %></td>
+      <td>
+        <% event.charas.each do |chara| %>
+          <%= link_to chara.animal, chara_path(chara) %>
+        <% end %>
+      </td>
+      <td>
+        <% event.keywords.each do |keyword| %>
+          <%= link_to keyword.name, keyword_path(keyword) %>
+        <% end %>
+      </td>
+      <td><%= event.body %></td>
+      <td><%= link_to 'Show', event %></td>
+      <td><%= link_to 'Edit', edit_event_path(event) %></td>
+      <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

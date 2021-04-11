@@ -1,0 +1,52 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.number_field :position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chapter_id %>
+    <%= form.select :chapter_id, options_for_select(@chapters.map{|item| [item.title, item.id]}, (event.chapter_id || params[:chapter_id])) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :chara_animals %>
+    <%= form.text_field :chara_animals, value: @event.charas.try(:map, &:animal).try(:join, ' ') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :refer_keywords %>
+    <%= form.text_field :refer_keywords, value: @event.keywords.try(:map, &:name).try(:join, ' ') %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tag_list %>
+    <%= form.text_field :tag_list %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

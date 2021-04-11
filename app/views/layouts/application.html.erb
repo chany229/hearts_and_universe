@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Hearts</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container-fluid">
+    <ul class="nav nav-pills">
+      <li role="presentation" <% if controller_name == 'chapters' %>class="active"<% end %>>
+        <%= link_to '章节', chapters_path %>
+      </li>
+      <li role="presentation" <% if controller_name == 'events' %>class="active"<% end %>>
+        <%= link_to '事件', events_path %>
+      </li>
+      <li role="presentation" <% if controller_name == 'charas' %>class="active"<% end %>>
+        <%= link_to '角色', charas_path %>
+      </li>
+      <li role="presentation" <% if controller_name == 'keywords' %>class="active"<% end %>>
+        <%= link_to '关键词', keywords_path %>
+      </li>
+    </ul>
+    <%= yield %>
+  </div>
+  </body>
+</html>

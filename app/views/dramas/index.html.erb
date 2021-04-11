@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dramas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Chara</th>
+      <th>Event</th>
+      <th>Desc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dramas.each do |drama| %>
+      <tr>
+        <td><%= drama.chara_id %></td>
+        <td><%= drama.event_id %></td>
+        <td><%= drama.desc %></td>
+        <td><%= link_to 'Show', drama %></td>
+        <td><%= link_to 'Edit', edit_drama_path(drama) %></td>
+        <td><%= link_to 'Destroy', drama, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Drama', new_drama_path %>

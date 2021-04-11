@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Charas</h1>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Chapters</th>
+      <th>Events</th>
+      <th>Name</th>
+      <th>Animal</th>
+      <th>Ability</th>
+      <th>Ability b</th>
+      <th>Group before</th>
+      <th>Group now</th>
+      <th>Group after</th>
+      <th>Target</th>
+      <th>Theme</th>
+      <th>Color1</th>
+      <th>Color2</th>
+      <th>Color3</th>
+      <th>Shape</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Skin1</th>
+      <th>Skin2</th>
+      <th>Eye color</th>
+      <th>Hair color</th>
+      <th>Weapon</th>
+      <th>Desc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charas.each do |chara| %>
+      <tr>
+        <td><%= chara.chapters.uniq.count %></td>
+        <td><%= chara.events.uniq.count %></td>
+        <td><%= chara.name %></td>
+        <td><%= chara.animal %></td>
+        <td><%= chara.ability %></td>
+        <td><%= chara.ability_b %></td>
+        <td><%= chara.group_before %></td>
+        <td><%= chara.group_now %></td>
+        <td><%= chara.group_after %></td>
+        <td><%= chara.target %></td>
+        <td><%= chara.theme %></td>
+        <td><%= chara.color1 %></td>
+        <td><%= chara.color2 %></td>
+        <td><%= chara.color3 %></td>
+        <td><%= chara.shape %></td>
+        <td><%= chara.sex %></td>
+        <td><%= chara.age %></td>
+        <td><%= chara.height %></td>
+        <td><%= chara.skin1 %></td>
+        <td><%= chara.skin2 %></td>
+        <td><%= chara.eye_color %></td>
+        <td><%= chara.hair_color %></td>
+        <td><%= chara.weapon %></td>
+        <td><%= chara.desc %></td>
+        <td><%= link_to 'Show', chara %></td>
+        <td><%= link_to 'Edit', edit_chara_path(chara) %></td>
+        <td><%= link_to 'Destroy', chara, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chara', new_chara_path %>

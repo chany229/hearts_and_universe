@@ -1,0 +1,127 @@
+<%= form_with(model: chara, local: true) do |form| %>
+  <% if chara.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(chara.errors.count, "error") %> prohibited this chara from being saved:</h2>
+
+      <ul>
+      <% chara.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :animal %>
+    <%= form.text_field :animal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ability %>
+    <%= form.text_field :ability %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ability_b %>
+    <%= form.text_field :ability_b %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group_before %>
+    <%= form.text_field :group_before %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group_now %>
+    <%= form.text_field :group_now %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group_after %>
+    <%= form.text_field :group_after %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target %>
+    <%= form.text_field :target %>
+  </div>
+
+  <div class="field">
+    <%= form.label :theme %>
+    <%= form.text_field :theme %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color1 %>
+    <%= form.text_field :color1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color2 %>
+    <%= form.text_field :color2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color3 %>
+    <%= form.text_field :color3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shape %>
+    <%= form.text_field :shape %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sex %>
+    <%= form.text_field :sex %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skin1 %>
+    <%= form.text_field :skin1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skin2 %>
+    <%= form.text_field :skin2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :eye_color %>
+    <%= form.text_field :eye_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hair_color %>
+    <%= form.text_field :hair_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weapon %>
+    <%= form.text_field :weapon %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_field :desc %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

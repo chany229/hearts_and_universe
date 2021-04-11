@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Chapters</h1>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Title</th>
+      <th>Theme</th>
+      <th>Events</th>
+      <th>Charas</th>
+      <th>Keywords</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody data-behavior='sortable'>
+    <% @chapters.each do |chapter| %>
+      <tr>
+        <td><%= chapter.position %></td>
+        <td><%= chapter.title %></td>
+        <td><%= chapter.theme %></td>
+        <td><%= chapter.events.count %></td>
+        <td>
+          <% chapter.charas.uniq.each do |chara| %>
+            <%= link_to chara.animal, chara_path(chara) %>
+          <% end %>
+        </td>
+        <td>
+          <% chapter.keywords.uniq.each do |keyword| %>
+            <%= link_to keyword.name, keyword_path(keyword) %>
+          <% end %>
+        </td>
+        <td><%= link_to '新建事件', new_event_path(chapter_id: chapter.id) %></td>
+        <td><%= link_to 'Show', chapter %></td>
+        <td><%= link_to 'Edit', edit_chapter_path(chapter) %></td>
+        <td><%= link_to 'Destroy', chapter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chapter', new_chapter_path %>

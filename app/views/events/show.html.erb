@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chapter:</strong>
+  <%= @event.chapter.try(:title) %>
+</p>
+
+<p>
+  <strong>title:</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>charas:</strong>
+  <% @event.charas.each do |chara| %>
+    <%= link_to chara.animal, chara_path(chara) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>keywords:</strong>
+  <% @event.keywords.each do |keyword| %>
+    <%= link_to keyword.name, keyword_path(keyword) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>body:</strong>
+  <%= @event.body %>
+</p>
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

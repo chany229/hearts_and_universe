@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Chara:</strong>
+  <%= @drama.chara_id %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @drama.event_id %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @drama.desc %>
+</p>
+
+<%= link_to 'Edit', edit_drama_path(@drama) %> |
+<%= link_to 'Back', dramas_path %>

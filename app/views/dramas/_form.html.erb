@@ -1,0 +1,32 @@
+<%= form_with(model: drama, local: true) do |form| %>
+  <% if drama.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(drama.errors.count, "error") %> prohibited this drama from being saved:</h2>
+
+      <ul>
+      <% drama.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :chara_id %>
+    <%= form.number_field :chara_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_field :desc %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
