@@ -1,4 +1,4 @@
-class AddTimeToEvents < ActiveRecord::Migration[5.2]
+class AddTimeToEvents < ActiveRecord::Migration[6.1]
   def change
     add_column :events, :year, :integer
     add_column :events, :month, :integer

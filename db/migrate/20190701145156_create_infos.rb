@@ -1,4 +1,4 @@
-class CreateInfos < ActiveRecord::Migration[5.2]
+class CreateInfos < ActiveRecord::Migration[6.1]
   def change
     create_table :infos do |t|
       t.integer :event_id

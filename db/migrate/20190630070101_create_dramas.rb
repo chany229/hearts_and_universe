@@ -1,4 +1,4 @@
-class CreateDramas < ActiveRecord::Migration[5.2]
+class CreateDramas < ActiveRecord::Migration[6.1]
   def change
     create_table :dramas do |t|
       t.integer :chara_id
