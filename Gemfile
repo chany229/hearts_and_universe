@@ -81,3 +81,5 @@ gem 'coffee-script-source', '1.8.0'
 
 gem 'coffee-rails'
 gem 'uglifier'
+
+gem 'sprockets', '~> 3.7.2'
